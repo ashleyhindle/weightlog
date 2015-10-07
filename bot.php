@@ -61,6 +61,7 @@ while ($run) {
 			}
 		}
 
+		$message .= "\nYou can view all of your logs here: http://weightlog.ashleyhindle.com/?token=" . urlencode($person['token']);
 		$telegram->sendMessage($update['message']['chat']['id'], $message);
 	}
 }
