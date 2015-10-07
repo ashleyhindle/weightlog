@@ -34,7 +34,7 @@ while ($run) {
 		$person = [
 			'telegramid' => $update['message']['from']['id'],
 			'firstname' => $update['message']['from']['first_name'],
-			'username' => $update['message']['from']['username'],
+            'username' => (isset($update['message']['from']['username'])) ? $update['message']['from']['username'] : 'Unknown',
 		];
 
 		// This will insert them if they're not there
