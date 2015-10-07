@@ -18,7 +18,7 @@ GET your data out to use as you like:
 
 Go to `https://telegram.me/BotFather`, send him `/newbot` and go through the motions until you a `token`.
 
-`git clone git@github.com:ashleyhindle/weightlog.git; cd weightlog`
+`git clone git@github.com:ashleyhindle/weightlog.git; cd weightlog; composer install`
 
 *Run the bot*: `TELEGRAM_BOT_TOKEN='tokenfrombotfather' php bot.php`
 
