@@ -16,10 +16,10 @@ GET your data out to use as you like:
 
 # I want my own  
 
-Go to `https://telegram.me/BotFather`, send him `/newbot` and go through the motions until you a `token`.
+Go to `https://telegram.me/BotFather`, send him `/newbot` and go through the motions until you get a `token`.  
 
-`git clone git@github.com:ashleyhindle/weightlog.git; cd weightlog; composer install`
+`git clone git@github.com:ashleyhindle/weightlog.git; cd weightlog; composer install`  
 
-*Run the bot*: `TELEGRAM_BOT_TOKEN='tokenfrombotfather' php bot.php`
+*Run the bot*: `TELEGRAM_BOT_TOKEN='tokenfrombotfather' php bot.php`  
 
-Go to `https://telegram.me/[yourbotname]` and send it your weight
+Go to `https://telegram.me/[yourbotname]` and send it your weight  
