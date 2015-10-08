@@ -34,7 +34,7 @@ while ($run) {
 		$person = [
 			'telegramid' => $update['message']['from']['id'],
 			'firstname' => $update['message']['from']['first_name'],
-            'username' => (isset($update['message']['from']['username'])) ? $update['message']['from']['username'] : 'Unknown',
+			'username' => (isset($update['message']['from']['username'])) ? $update['message']['from']['username'] : 'Unknown',
 		];
 
 		// This will insert them if they're not there
@@ -42,17 +42,16 @@ while ($run) {
 		$person = $weightLog->getPerson($person['telegramid'], $person['firstname'], $person['username']);
 		$lastWeight = $person['currentweight'];
 
-		$result = $db->perform($insertQuery, [
-			time(),
-			$weightGiven,
-			$person['id'],
-		]);
-
-		$weightLog->setCurrentWeight($person, $weightGiven);
-
 		if (empty($weightGiven)) {
-			$message = "uwotm8?! That was _not_ a valid weight!";
+			$message = "Huh? I'm afraid that wasn't a valid weight :(";
 		} else {
+			$result = $db->perform($insertQuery, [
+				time(),
+				$weightGiven,
+				$person['id'],
+			]);
+
+			$weightLog->setCurrentWeight($person, $weightGiven);
 			if (!empty($lastWeight) && $lastWeight > $weightGiven) {
 				$diff = round($lastWeight - $weightGiven, 1);
 				$message = "That's been logged for you.  You've lost {$diff} lbs or kgs since last time, that's awesome";
