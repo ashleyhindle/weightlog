@@ -2,16 +2,16 @@
 header('Content-Type: application/json');
 $token = (isset($_GET['token'])) ? $_GET['token'] : '';
 if (empty($token)) {
-	die(json_encode([
-		'error' => 'Empty token'
-	]));
+    die(json_encode([
+        'error' => 'Empty token'
+    ]));
 }
 
-require '../vendor/autoload.php';
-use Aura\Sql\ExtendedPdo;
+require '../src/bootstrap.php';
 use WeightLog\WeightLog;
+use WeightLog\Db;
 
-$db = new ExtendedPdo('sqlite:../weights.db');
+$db = Db::getInstance();
 $weightLog = new WeightLog($db);
 
 die(json_encode($weightLog->getAllWeightsByToken($token)));

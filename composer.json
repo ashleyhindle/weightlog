@@ -8,7 +8,7 @@
     ],
     "require": {
         "irazasyed/telegram-bot-sdk": "^1.0",
-        "aura/sql": "~2.4"
+        "aura/sql": "~2.4",
     },
     "autoload": {
         "psr-0": {"WeightLog": "src/"}
