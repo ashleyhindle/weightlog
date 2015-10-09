@@ -16,6 +16,9 @@ $weightLog = new WeightLog($db);
 $command = new \WeightLog\TelegramCommands\OutputCommand();
 $telegram->addCommand($command);
 
+$command = new \WeightLog\TelegramCommands\HelpCommand();
+$telegram->addCommand($command);
+
 $run = true;
 $lastUpdateId = 0;
 

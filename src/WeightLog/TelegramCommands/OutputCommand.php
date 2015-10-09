@@ -19,7 +19,7 @@ class OutputCommand extends Command
     /**
      * @var string Command Description
      */
-    protected $description = "Output command will output your weight log in a nice easy to read format";
+    protected $description = "Output your weight history in a nice easy to read format, with a lovely line chart";
 
     /**
      * @inheritdoc
