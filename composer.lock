@@ -4,53 +4,8 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9f1fbfb3de9b863dffedf758ef51d312",
+    "hash": "540226f64325d638ba6aa12f022ff431",
     "packages": [
-        {
-            "name": "amenadiel/jpgraph",
-            "version": "v3.6.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/amenadiel/jpgraph.git",
-                "reference": "70b52b94fff50358854ded8db7ca9df93f9605fc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/amenadiel/jpgraph/zipball/70b52b94fff50358854ded8db7ca9df93f9605fc",
-                "reference": "70b52b94fff50358854ded8db7ca9df93f9605fc",
-                "shasum": ""
-            },
-            "require": {
-                "ext-gd": "*",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Amenadiel\\JpGraph\\": "src/",
-                    "Amenadiel\\JpGraph\\Graph\\": "src/graph",
-                    "Amenadiel\\JpGraph\\Image\\": "src/image",
-                    "Amenadiel\\JpGraph\\Plot\\": "src/plot",
-                    "Amenadiel\\JpGraph\\Text\\": "src/text",
-                    "Amenadiel\\JpGraph\\Themes\\": "src/themes",
-                    "Amenadiel\\JpGraph\\Util\\": "src/util"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "QPL 1.0"
-            ],
-            "description": "jpGraph, library to make graphs and charts",
-            "homepage": "http://jpgraph.net/",
-            "keywords": [
-                "chart",
-                "data",
-                "graph",
-                "jpgraph",
-                "pie"
-            ],
-            "time": "2015-09-25 23:48:59"
-        },
         {
             "name": "aura/sql",
             "version": "2.4.3",
