@@ -26,7 +26,7 @@ class OutputCommand extends Command
      */
     public function handle($arguments)
     {
-        $limit = 21;
+        $limit = 30;
         $update = $this->getUpdate();
         $weightLog = new WeightLog(Db::getInstance());
         $person = $weightLog->getPersonFromUpdate($update);
