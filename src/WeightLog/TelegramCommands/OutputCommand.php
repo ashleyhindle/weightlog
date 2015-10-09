@@ -42,7 +42,7 @@ class OutputCommand extends Command
             $output .= date('jS \of M', $weight['timestamp']) . ' - ' . $weight['weight'] . 'lbs/kgs' . "\n";
         }
 
-        $chartFile = '/tmp/weightlog-chart-' . $person['id'] . '.png';
+        $chartFile = sys_get_temp_dir() . '/weightlog-chart-' . $person['id'] . '.png';
         $url = "https://chart.googleapis.com/chart?chxt=y,x&chxl=1:|" . urlencode(implode('|', $chxl)) . "|&chs=900x280&chxr=0," . (min($chartWeights)-3) . "," . (max($chartWeights)+5) . "&chds=" . (min($chartWeights)-3) . "," . (max($chartWeights)+5) . "&cht=lc&chco=0077CC&chd=t:" . implode(',', $chartWeights);
         
         echo $url . PHP_EOL;
