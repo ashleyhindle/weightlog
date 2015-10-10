@@ -1,11 +1,12 @@
 <?php
-header('Content-Type: application/json');
 $token = (isset($_GET['token'])) ? $_GET['token'] : '';
+
 if (empty($token)) {
-    die(json_encode([
-        'error' => 'Empty token'
-    ]));
+    readfile('index.html');
+    exit;
 }
+
+header('Content-Type: application/json');
 
 require '../src/bootstrap.php';
 use WeightLog\WeightLog;
