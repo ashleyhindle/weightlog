@@ -1,7 +1,7 @@
 <?php
 $token = (isset($_GET['token'])) ? $_GET['token'] : '';
 
-if (empty($token)) {
+if (empty($token)) { // Please ignore this terrbile code for now
     readfile('index.html');
     exit;
 }
