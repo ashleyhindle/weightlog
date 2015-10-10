@@ -7,7 +7,9 @@ To get started add the bot as a Telegram contact [https://telegram.me/WeightLogB
 
 # Commands
 
-`/output` - Shows a text log, and line chart of your weight
+`/output` - Sends you a line chart and a table of your weight  
+`/api` - Sends you the link to your JSON API  
+`/help` - Gives you help  
 
 # API  
 
