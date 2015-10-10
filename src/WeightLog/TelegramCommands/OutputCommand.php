@@ -6,9 +6,6 @@ use Telegram\Bot\Commands\Command;
 use WeightLog\WeightLog;
 use WeightLog\Db;
 
-use Amenadiel\JpGraph\Graph;
-use Amenadiel\JpGraph\Plot;
-
 class OutputCommand extends Command
 {
     /**
@@ -60,8 +57,6 @@ class OutputCommand extends Command
 
         $url = "https://chart.googleapis.com/chart?" . http_build_query($query);
         
-        echo $url . PHP_EOL;
-
         file_put_contents(
             $chartFile,
             file_get_contents(

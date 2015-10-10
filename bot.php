@@ -13,11 +13,9 @@ $db = Db::getInstance();
 $telegram = new Api($token);
 $weightLog = new WeightLog($db);
 
-$command = new \WeightLog\TelegramCommands\OutputCommand();
-$telegram->addCommand($command);
-
-$command = new \WeightLog\TelegramCommands\HelpCommand();
-$telegram->addCommand($command);
+$telegram->addCommand(\WeightLog\TelegramCommands\OutputCommand::class);
+$telegram->addCommand(\WeightLog\TelegramCommands\ApiCommand::class);
+$telegram->addCommand(\WeightLog\TelegramCommands\HelpCommand::class);
 
 $run = true;
 $lastUpdateId = 0;
