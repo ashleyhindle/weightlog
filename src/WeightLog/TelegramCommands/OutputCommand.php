@@ -19,7 +19,7 @@ class OutputCommand extends Command
     /**
      * @var string Command Description
      */
-    protected $description = "Output your weight history in a nice easy to read format, with a lovely line chart";
+    protected $description = "Output your weight history with a lovely line chart and useful table";
 
     /**
      * @inheritdoc
@@ -43,7 +43,22 @@ class OutputCommand extends Command
         }
 
         $chartFile = sys_get_temp_dir() . '/weightlog-chart-' . $person['id'] . '.png';
-        $url = "https://chart.googleapis.com/chart?chxt=y,x&chxl=1:|" . urlencode(implode('|', $chxl)) . "|&chs=900x280&chxr=0," . (min($chartWeights)-3) . "," . (max($chartWeights)+5) . "&chds=" . (min($chartWeights)-3) . "," . (max($chartWeights)+5) . "&cht=lc&chco=0077CC&chd=t:" . implode(',', $chartWeights);
+        
+        $min = min($chartWeights) - 5;
+        $max = max($chartWeights) + 5;
+
+        $query = [
+            'chxt' => 'y,x',
+            'chxl' => '1:|' . implode('|', $chxl) . '|', //Labels
+            'chs' => '900x280', //Size
+            'chxr' => "0,{$min},{$max}", //Y Axis Range
+            'chds' => "{$min},{$max}", //Data scale
+            'cht' => 'lc', //Chart type (line)
+            'chco' => '0077CC', // Chart colour
+            'chd' => 't:' . implode(',', $chartWeights)
+        ];
+
+        $url = "https://chart.googleapis.com/chart?" . http_build_query($query);
         
         echo $url . PHP_EOL;
 
